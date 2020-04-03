@@ -6,7 +6,7 @@ Desde 2010, a Tembici. é uma empresa especializada em soluções de mobilidade 
 
 #### DESAFIO
 
-``` Os dados a serem utilizados neste desafio se encontram neste repositório na pasta DATA ```
+``` Os dados a serem utilizados neste desafio se encontram neste repositório no arquivo cycle-share-dataset.zip. ```
 
 ###### PARTE 01
 Levando em conta duas fontes de dados sendo: um banco relacional e uma API de stream de dados, sua primeira missão será desenhar 
@@ -17,7 +17,7 @@ brevemente sua escolha levantando os pontos positivos e negativos da solução.
 ###### PARTE 02
 
 
-Seu objetivo é criar um script SPARK, que gere um arquivo único de output, utilizando os 3 arquivos em csv (station.csv, trip.csv e weather.csv), contendo todos os dados de viagens, acrescidos de:
+Seu objetivo é criar um script PYSPARK, que gere um arquivo único de output, utilizando os 3 arquivos em csv (station.csv, trip.csv e weather.csv), contendo todos os dados de viagens, acrescidos de:
 - Latitude/Longitude da estação de início e de fim.
 - Uma coluna com o nome "long_trip" de valor booleano sendo 'true' para viagens superiores a 10 minutos.
 - Condição meteorológia no dia da viagem (coluna events da tabela weather).
