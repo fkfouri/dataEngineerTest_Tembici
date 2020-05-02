@@ -8,6 +8,8 @@ Este material é parte do processo de Engenheiros de Dados na Tembici, a qual fo
 
 Levando em conta duas fontes de dados sendo: um banco relacional e uma API de stream de dados, sua primeira missão será desenhar uma arquitetura orientada a EVENTOS para a ingestão near real-time destes dados em um datalake. Justifique brevemente sua escolha levantando os pontos positivos e negativos da solução.
 
+Levando em conta duas fontes de dados sendo: um banco relacional e uma API de stream de dados, sua primeira missão será desenhar uma arquitetura orientada a EVENTOS para a ingestão near real-time destes dados em um datalake. Justifique brevemente sua escolha levantando os pontos positivos e negativos da solução.
+
 
 ###### PARTE 02
 
@@ -31,7 +33,26 @@ A máquina utilizada possui o Sistema Operacional Windows, onde se faz necessár
 
 Para executar basta rodar o arquivo "submit_local.bat".
 
+<<<<<<< HEAD
+
+
+## Resolução PARTE 02
+
+Esta resolução levou em conta dois contextos:
+- processamento local (Windows)
+- processamento em Cluster
+
+### Processamento Local
+A máquina utilizada possui o Sistema Operacional Windows, onde se faz necessário ter instalado o Python 3 e o Spark conforme tutorial (https://medium.com/big-data-engineering/how-to-install-apache-spark-2-x-in-your-pc-e2047246ffc3).
+
+Para executar basta rodar o arquivo "submit_local.bat".
+
 Toda a sequencia de execução esta descrita no notebook "desafio2.ipynb".
 
 
+=======
+Toda a sequencia de execução esta descrita no notebook "desafio2.ipynb".
+
+
+>>>>>>> b10d9e7af030770e9f56413481eceff49a1909a2
 Para conferir o processamento local, acesse a pasta "local" e 
