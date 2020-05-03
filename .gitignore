@@ -2,3 +2,5 @@ spark-warehouse
 .ipynb_checkpoints
 /output
 /local/desafio2.py
+/ubuntu-bionic-18.04-cloudimg-console.log
+/.vagrant
