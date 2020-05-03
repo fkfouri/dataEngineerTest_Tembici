@@ -13,11 +13,22 @@ Vagrant.configure("2") do |config|
     apt -y install docker.io
   SHELL
 
-  config.vm.provision "shell", 
-  inline: "docker run -p 8080:8080 --rm /
-           -v /vagrant/logs:/logs -v /vagrant/notebook:/notebook /
-           -e ZEPPELIN_LOG_DIR='/logs' -e ZEPPELIN_NOTEBOOK_DIR='/notebook' /
-           --name zeppelin apache/zeppelin:0.9.0"
+
+
+  ####### Provision #######
+  config.vm.provision "docker" do |docker|
+    docker.run "zeppelin",
+      image: "apache/zeppelin:0.9.0",
+      args: "-p 8080:8080 " + 
+            "-v /vagrant/logs:/logs -v /vagrant/notebook:/notebook " +
+            "-e ZEPPELIN_LOG_DIR='/logs' -e ZEPPELIN_NOTEBOOK_DIR='/notebook'"
+  end
+
+  #config.vm.provision "shell", 
+  #inline: "docker run -p 8080:8080 --rm /
+  #         -v /vagrant/logs:/logs -v /vagrant/notebook:/notebook /
+  #         -e ZEPPELIN_LOG_DIR='/logs' -e ZEPPELIN_NOTEBOOK_DIR='/notebook' /
+  #         --name zeppelin apache/zeppelin:0.9.0"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
