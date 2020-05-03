@@ -14,8 +14,8 @@ Vagrant.configure("2") do |config|
   SHELL
 
   config.vm.provision "shell", 
-  inline: "docker run -p 8080:8080 --rm 
-           -v/ /vagrant/logs:/logs -v /vagrant/notebook:/notebook /
+  inline: "docker run -p 8080:8080 --rm /
+           -v /vagrant/logs:/logs -v /vagrant/notebook:/notebook /
            -e ZEPPELIN_LOG_DIR='/logs' -e ZEPPELIN_NOTEBOOK_DIR='/notebook' /
            --name zeppelin apache/zeppelin:0.9.0"
 
