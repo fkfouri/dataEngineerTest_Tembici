@@ -2,7 +2,7 @@
 
 #### SOBRE ESTE REPOSITORIO
 
-Este material é parte do processo de Engenheiros de Dados na Tembici, a qual foi proposto o seguinte desafio.
+Este material é parte do processo de seleção para Engenheiros de Dados na Tembici. Segue a proposta de desafio.
 
 > ###### PARTE 01
 > 
@@ -36,3 +36,5 @@ A máquina utilizada possui o Sistema Operacional Windows, onde se faz necessár
 
 Toda a sequencia de execução e preparação de dados esta descrita no notebook "/local/desafio2.ipynb". Para executar basta rodar o arquivo "/local/submit_local.bat".
  
+### Processamento em Cluster
+

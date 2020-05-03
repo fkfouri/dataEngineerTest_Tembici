@@ -12,8 +12,12 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     apt -y install docker.io
   SHELL
+
   config.vm.provision "shell", 
-  inline: "sudo"
+  inline: "docker run -p 8080:8080 --rm 
+           -v/ /vagrant/logs:/logs -v /vagrant/notebook:/notebook /
+           -e ZEPPELIN_LOG_DIR='/logs' -e ZEPPELIN_NOTEBOOK_DIR='/notebook' /
+           --name zeppelin apache/zeppelin:0.9.0"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
