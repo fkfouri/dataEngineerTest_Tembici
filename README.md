@@ -41,7 +41,7 @@ Toda a sequencia de execução e preparação de dados esta descrita no notebook
 A saída desta execução será um arquivo na pasta "/local/output/trips/", onde será encontrado um arquivo com formato parquet.
  
 ### Processamento em Cluster
-O arquivo /cluster/AWS.ipynb contém uma sequencia de configuração dos servidos da Amazon (S3, Group Resource, EMR) para a criação de um cluster Spark formado por um Master e dois Slaves.
+O arquivo "/cluster/AWS.ipynb" contém uma sequencia de configuração dos servidos da Amazon (S3, Group Resource, EMR) para a criação de um cluster Spark On-Demand formado por um Master e dois Slaves.
 
 A execução deste script requer que o Engenheiro de Dados possua uma conta ativa na AWS e que possua configurado localmente o AWS CLI. 
 
