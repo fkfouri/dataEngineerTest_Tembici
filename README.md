@@ -41,19 +41,19 @@ Os seguintes dados na minha percepção fazem parte do contexto de uma API de st
 - Dados de heath monitoring dos ativos de mobilidade (se aplicável)
 - Dados de sensores (acelerometro, movimento, etc.)
 
-Observa-se que os dados de origem API de Streaming podem conter dados duvidosos, assim, Se faz necessario um tratamento da entrada dos dados.
+Observa-se que os dados de origem API de Streaming podem conter dados duvidosos, assim, se faz necessario um tratamento da entrada dos dados.
 
 ![Image1](images/ConceptModel.png)
 
-Sobre o sistema de stream, duas opções de serviços gerenciados da AWS é o Kinesis, que se mostra mais adequado para suportar o grande volume de dados que um IOT é capaz de gerar. Para a classificação de dados e tratamento podem ser utilizados serviços da AWS Lambda.
+Sobre o sistema de stream, a opções de serviços gerenciados da AWS chamado Kinesis se mostra mais adequado para suportar o grande volume de dados que um IOT é capaz de gerar. Para a classificação de dados e tratamento podem ser utilizados serviços da AWS Lambda.
 
-A arquitetura considera o input assincrono de diversos ativos de mobilidade, passando pelo tratamento da entrada e em seguida sendo avaliado por um cluster EMR com Spark Streaming.
+A arquitetura considera o input assíncrono de diversos ativos de mobilidade, passando pelo tratamento da entrada e em seguida sendo processado por um cluster EMR com Spark Streaming.
 
 ![Image1](images/EDA1.png)
 
-O cluster conteria um KCL (Kinesis Client) capaz de receber as informações do Kinesis e fazer processamento em massa criando um Data Lake em um Bucket S3 com arquivos particionados por região e data, e catalogados pelo AWS Glue. 
+O cluster necessita conter um KCL (Kinesis Client) capaz de receber (Consumer) as informações do Kinesis e realziar o processamento desta massa de dados, criando um Data Lake em um serviço de Storage da AWS como o Bucket S3, com arquivos particionados por região e data. Toda esta estrutura de dados catalogados pelo AWS Glue. 
 
-A saída do processamento do cluster Spark pode também retornar dados relevantes para o Banco de Dados relacional, para ser usado como dado de referencia para futuras viagens, manutenções, etc.
+A saída do processamento do cluster Spark pode também retornar dados relevantes para o Banco de Dados relacional, para ser usado como dado de referencia para futuras operações como novas viagens, manutenções, etc.
 
 ### Recomendação.
 
