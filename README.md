@@ -42,9 +42,20 @@ Os seguintes dados na minha percepção fazem parte do contexto de uma API de st
 - Dados de sensores (acelerometro, movimento, etc.)
 
 Observa-se que os dados de origem API de Streaming podem conter dados duvidosos, assim, Se faz necessario um tratamento da entrada dos dados.
-![Test Image 6](images/ConceptModel.png)
 
+![Image1](images/ConceptModel.png)
 
+Sobre o sistema de stream, duas opções de serviços gerenciados da AWS é o Kinesis, que se mostra mais adequado para suportar o grande volume de dados que um IOT é capaz de gerar. Para a classificação de dados e tratamento podem ser utilizados serviços da AWS Lambda.
+
+A arquitetura considera o input assincrono de diversos ativos de mobilidade, passando pelo tratamento da entrada e em seguida sendo avaliado por um cluster EMR com Spark Streaming.
+
+![Image1](images/EDA.png)
+
+O cluster conteria um KCL (Kinesis Client) capaz de receber as informações do Kinesis e fazer processamento em massa criando um Data Lake em um Bucket S3 com arquivos particionados por região e data, e catalogados pelo AWS Glue. 
+
+A saída do processamento do cluster Spark pode também retornar dados relevantes para o Banco de Dados relacional, para ser usado como dado de referencia para futuras viagens, manutenções, etc.
+
+### Recomendação.
 
 Para verificação e teste da arquitetura, sugiro a utilização de técnicas da Engenharia do Caos, cujo objetivo é verificar a robustes e a tolerância de falhas em ambientes de produção. Ferramentas como Simian Army (Netflix), Gremlin, Mangle, ChaosToolkit e Chaos-Mesh podem apoiar este tipo de avaliação.
 
