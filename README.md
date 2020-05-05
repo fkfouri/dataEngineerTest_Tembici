@@ -49,7 +49,7 @@ Sobre o sistema de stream, duas opções de serviços gerenciados da AWS é o Ki
 
 A arquitetura considera o input assincrono de diversos ativos de mobilidade, passando pelo tratamento da entrada e em seguida sendo avaliado por um cluster EMR com Spark Streaming.
 
-![Image1](images/EDA.png)
+![Image1](images/EDA1.png)
 
 O cluster conteria um KCL (Kinesis Client) capaz de receber as informações do Kinesis e fazer processamento em massa criando um Data Lake em um Bucket S3 com arquivos particionados por região e data, e catalogados pelo AWS Glue. 
 
